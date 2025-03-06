@@ -3,11 +3,12 @@ import java.sql.SQLOutput;
 public class Main {
 
     public static void main(String[] args) {
-        int ticket = 24365; // Стоимость билета
-        int milesRubles = 20; // Рублей за 1 милю
-        int bonusMiles = ticket / milesRubles;
+        BonusMilesService service = new BonusMilesService();
+        int ticket = 10_000; // Стоимость билета
+        int miles = service.calculate(ticket);
 
-        System.out.println("За билет стоимостью " + ticket + " рублей будет начислено " + bonusMiles + " миль.");
+
+        System.out.println("За билет стоимостью " + ticket + " рублей будет начислено " + miles + " миль.");
     }
 
 }
